@@ -8,22 +8,21 @@
     </li>
   </ul>
 </header>
-<% picture1 ="今日からインスタクローン課題始めたよー！" %>
-<% picture2 ="投稿一覧ページ作成中！" %>
+
+<%
+  pictures = [
+    "今日からインスタクローン課題始めたよー！",
+    "投稿一覧ページ作成中！"
+  ]
+%>
 
 <div class="main pictures-index">
   <div class="container">
-    <div class="pictures-index-item">
-      <%= picture1 %>
-    </div>
-    <div class="pictures-index-item">
-      <%= picture2 %>
-    </div>
-  </div>
-</div>
-
-      
-      
+    <% pictures.each do|picture|%>
+      <div class="pictures-index-item">
+        <%= picture %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>
