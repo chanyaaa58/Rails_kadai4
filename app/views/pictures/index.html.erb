@@ -2,7 +2,7 @@
   <div class="container">
     <% @pictures.each do|picture|%>
       <div class="pictures-index-item">
-        <%= picture.content %>
+      <%= link_to(picture.content,"/pictures/#{picture.id}") %>
       </div>
     <% end %>
     </div>
