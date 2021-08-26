@@ -1,0 +1,15 @@
+current directory: /Users/ayatakahashi/workspace/insta_app/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+/Users/ayatakahashi/.rbenv/versions/2.7.4/bin/ruby -I /Users/ayatakahashi/.rbenv/versions/2.7.4/lib/ruby/2.7.0 -r ./siteconf20210826-4465-zklk5j.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ayatakahashi/workspace/insta_app/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/ayatakahashi/workspace/insta_app/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/ayatakahashi/workspace/insta_app/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.7/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210826-4465-1ow2eg5/bootsnap
