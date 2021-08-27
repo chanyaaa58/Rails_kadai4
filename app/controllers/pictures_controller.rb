@@ -7,4 +7,7 @@ class PicturesController < ApplicationController
   end
   def new
   end
+  def create
+    redirect_to("/pictures")
+  end
 end
