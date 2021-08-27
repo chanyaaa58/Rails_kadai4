@@ -8,6 +8,8 @@ class PicturesController < ApplicationController
   def new
   end
   def create
+    @picture = Picture.new(content:params[:content])
+    @picture.save
     redirect_to("/pictures")
   end
 end
