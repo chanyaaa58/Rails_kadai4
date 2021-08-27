@@ -9,6 +9,7 @@
       </div>
       <div class="picture-menus">
         <%= link_to("編集","/pictures/#{@picture.id}/edit") %>
+        <%= link_to("削除", "/pictures/#{@picture.id}/destroy",{method:"post"}) %>
     </div>
   </div>
 </div>

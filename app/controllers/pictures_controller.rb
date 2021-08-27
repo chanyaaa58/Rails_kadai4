@@ -21,4 +21,10 @@ class PicturesController < ApplicationController
     @picture.save
     redirect_to("/pictures")
   end
+  def destroy
+    @picture = Picture.find_by(id: params[:id])
+    @picture.content = params[:content]
+    @picture.destroy
+    redirect_to("/pictures")
+  end
 end

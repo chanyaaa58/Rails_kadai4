@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'pictures/create', to: 'pictures#create'
   get 'pictures/:id/edit', to: 'pictures#edit'
   post 'pictures/:id/update', to: 'pictures#update'
-
+  post 'pictures/:id/destroy', to: 'pictures#destroy'
 
   get 'top', to: 'home#top'
   get 'about', to: 'home#about'
