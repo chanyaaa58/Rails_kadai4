@@ -15,4 +15,10 @@ class PicturesController < ApplicationController
   def edit
     @picture = Picture.find_by(id: params[:id])
   end
+  def update
+    @picture = Picture.find_by(id: params[:id])
+    @picture.content = params[:content]
+    @picture.save
+    redirect_to("/pictures")
+  end
 end
