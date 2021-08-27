@@ -7,6 +7,8 @@
       <div class="picture-time">
         <%= @picture.created_at %>
       </div>
+      <div class="picture-menus">
+        <%= link_to("編集","/pictures/#{@picture.id}/edit") %>
     </div>
   </div>
 </div>

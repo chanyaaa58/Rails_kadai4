@@ -12,4 +12,6 @@ class PicturesController < ApplicationController
     @picture.save
     redirect_to("/pictures")
   end
+  def edit
+  end
 end
