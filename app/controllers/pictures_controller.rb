@@ -13,5 +13,6 @@ class PicturesController < ApplicationController
     redirect_to("/pictures")
   end
   def edit
+    @picture = Picture.find_by(id: params[:id])
   end
 end
