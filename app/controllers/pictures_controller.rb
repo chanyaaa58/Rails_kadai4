@@ -6,11 +6,16 @@ class PicturesController < ApplicationController
     @picture = Picture.find_by(id: params[:id])
   end
   def new
+    @picture =Picture.new
   end
   def create
     @picture = Picture.new(content:params[:content])
-    @picture.save
-    redirect_to("/pictures")
+    if @picture.save
+      flash[:notice] = "投稿を作成しました"
+      redirect_to("/pictures")
+    else
+      render("pictures/new")
+    end
   end
   def edit
     @picture = Picture.find_by(id: params[:id])
