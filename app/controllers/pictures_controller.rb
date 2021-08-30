@@ -19,6 +19,7 @@ class PicturesController < ApplicationController
     @picture = Picture.find_by(id: params[:id])
     @picture.content = params[:content]
     if @picture.save
+      flash[:notice] = "投稿を編集しました"
       redirect_to("/pictures")
     else
       render("pictures/edit")
