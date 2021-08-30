@@ -31,6 +31,7 @@ class PicturesController < ApplicationController
     end
   end
   def destroy
+    flash[:notice] = "投稿を削除しました"
     @picture = Picture.find_by(id: params[:id])
     @picture.content = params[:content]
     @picture.destroy
