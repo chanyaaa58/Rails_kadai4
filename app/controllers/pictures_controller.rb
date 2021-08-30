@@ -18,8 +18,11 @@ class PicturesController < ApplicationController
   def update
     @picture = Picture.find_by(id: params[:id])
     @picture.content = params[:content]
-    @picture.save
-    redirect_to("/pictures")
+    if @picture.save
+      redirect_to("/pictures")
+    else
+      render("pictures/edit")
+    end
   end
   def destroy
     @picture = Picture.find_by(id: params[:id])
