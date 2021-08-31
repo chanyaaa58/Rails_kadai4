@@ -26,11 +26,9 @@
     </li>
   </ul>
 　</header>
-  <% if flash[:notice] %>
-    <div class="flash">
-  <%=flash[:notice] %>
-  </div>
-  <% end %>
-  <%= yield %>
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    <%= yield %>
   </body>
 </html>

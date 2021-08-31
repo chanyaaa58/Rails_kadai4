@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sessions
   resources :pictures
   resources :users
   get 'top', to: 'home#top'
