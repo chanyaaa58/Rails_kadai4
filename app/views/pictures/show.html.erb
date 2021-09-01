@@ -1,15 +1,6 @@
-<div class="main pictures-show">
-  <div class="container">
-    <div class="pictures-show-item">
-      <p>
-        <%= @picture.content %>
-      </p>
-      <div class="picture-time">
-        <%= @picture.created_at %>
-      </div>
-      <div class="picture-menus">
-        <%= link_to("編集","/pictures/#{@picture.id}/edit") %>
-        <%= link_to("削除", "/pictures/#{@picture.id}/destroy",{method:"post"}) %>
-    </div>
-  </div>
-</div>
+<h1>詳細画面</h1>
+<p id="notice"><%= notice %></p>
+<p>Content: <%= @picture.content %></p><br>
+<p>Image: <%= image_tag @picture.image.url %><br>
+<%= link_to '編集', edit_picture_path(@picture) %> |
+<%= link_to '戻る', pictures_path %>
