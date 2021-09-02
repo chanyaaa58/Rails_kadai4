@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :user_check, only: [:edit, :update]
   skip_before_action :login_required, only: [:new, :create]
 
   def new
@@ -38,8 +39,14 @@ class UsersController < ApplicationController
   end
   
   private
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation, :content, :image, :image_cache)
-    end
+  end
+  def user_check
+    user = User.find(params[:id])
+      if current_user.id != user.id
+        redirect_to pictures_path, notice: "権限がありません"
+      end
+  end
 end

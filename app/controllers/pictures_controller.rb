@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: [:show, :edit, :update, :destroy]
+  before_action :user_check_p, only: [:edit, :update]
   def index
     @pictures = Picture.all.order(created_at: :desc)
   end
@@ -45,5 +46,11 @@ class PicturesController < ApplicationController
   end
   def set_picture
     @picture = Picture.find(params[:id])
+  end
+  def user_check_p
+    user = User.find(params[:id])
+      if current_user.id != user.id
+        redirect_to pictures_path, notice: "権限がありません"
+      end
   end
 end
