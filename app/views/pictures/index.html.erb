@@ -2,6 +2,8 @@
 <table>
   <tr>
     <th>Photo by</th>
+    <th>Date</th>
+    <th>Update</th> 
     <th>Content</th>
     <th>Photo</th>
     <th>Menu</th>
@@ -9,6 +11,8 @@
 <% @pictures.each do |picture| %>
   <tr>
     <td><%= picture.user.name %></td>
+    <td><%= l picture.created_at %></td>
+    <td><%= l picture.updated_at %></td>
     <td><%= picture.content %></td>
     <td><%= image_tag picture.image.url if picture.image && picture.image.url %></td>
     <td><%= link_to 'read more', picture_path(picture.id) %></td>
