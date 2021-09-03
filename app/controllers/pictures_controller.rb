@@ -48,8 +48,8 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
   end
   def user_check_p
-    user = User.find(params[:id])
-      if current_user.id != user.id
+    picture = Picture.find(params[:id])
+      if picture.user_id != current_user.id
         redirect_to pictures_path, notice: "権限がありません"
       end
   end
