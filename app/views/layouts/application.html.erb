@@ -4,31 +4,13 @@
     <title>InstaApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <header>
-  <div class="header-logo">
-    <%= link_to "InstaApp", top_path %>
-  </div>
-  <ul class="header-menus">
-    <li>
-      <%= link_to "InstaAppとは", about_path %>
-    </li>
-    <li>
-      <%= link_to "投稿一覧", pictures_path %>
-    </li>
-    <li>
-      <%= link_to "新規投稿", new_picture_path %>
-    </li>
-    <li>
-      <%= link_to "お気に入り一覧", favorites_path %>
-    </li>
-  </ul>
-　</header>
+  　<div class="p-3 mb-2 bg-info text-dark">
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
@@ -40,5 +22,6 @@
       <%= link_to "ログイン", new_session_path %>
     <% end %>
     <%= yield %>
+    </div>
   </body>
 </html>
