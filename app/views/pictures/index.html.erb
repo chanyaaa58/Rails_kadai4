@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="title">
+    <%= link_to "InstaApp", top_path %>
+  </div>
+  <header>
+    <ul class="header_menus">
+      <li><%= link_to "InstaAppとは", about_path %></li>
+      <li><%= link_to "投稿一覧", pictures_path %></li>
+      <li><%= link_to "新規投稿", new_picture_path %></li>
+      <li><%= link_to "お気に入り一覧", favorites_path %></li>
+    </ul>
+　</header>
+    <article>
+      <div class="contents">
+        <h1>投稿一覧</h1>
+        <table>
+        <tr>
+          <th>Photo by</th>
+          <th>Date</th>
+          <th>Update</th> 
+          <th>Content</th>
+          <th>Photo</th>
+          <th>Menu</th>
+        </tr>
+
+        <% @pictures.each do |picture| %>
+          <tr>
+            <td><%= picture.user.name %></td>
+            <td><%= l picture.created_at %></td>
+            <td><%= l picture.updated_at %></td>
+            <td><%= picture.content %></td>
+            <td><%= image_tag picture.image.url, size: '320x240' if picture.image && picture.image.url %></td>
+            <td><%= link_to 'read more', picture_path(picture.id) %></td>
+            <% if picture.user_id == current_user.id %>
+              <td><%= link_to '編集', edit_picture_path(picture.id), data: { confirm: '本当に編集してよいですか？' } %></td>
+              <td><%= link_to '削除', picture_path(picture.id), method: :delete ,data: { confirm: '本当に削除してよいですか？' } %></td>
+            <% end %>
+          </tr>
+        <% end %>
+        </table>
+        <%= link_to '新規投稿する', new_picture_path %>
+      </div>
+    </article>
+</div>
