@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'pictures#index'
+  root 'pictures#index'
   resources :sessions
   resources :pictures do
     collection do
